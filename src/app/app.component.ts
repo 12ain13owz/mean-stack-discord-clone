@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'mean-stack-discord-clone';
+  darkMode = signal<boolean>(
+    JSON.parse(localStorage.getItem('darkMode') ?? 'false')
+  );
+  ngOnInit(): void {
+    initFlowbite();
+
+    if (this.darkMode()) document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
+  }
 }

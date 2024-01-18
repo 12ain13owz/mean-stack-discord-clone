@@ -1,0 +1,11 @@
+<button
+  type="button"
+  class="dark:text-primary-500"
+  (click)="darkMode.set(!darkMode())"
+>
+  @if (!darkMode()) {
+  <i class="bx bxs-moon"></i>
+  } @else {
+  <i class="bx bxs-sun"></i>
+  }
+</button>
