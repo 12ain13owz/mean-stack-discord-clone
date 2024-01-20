@@ -1,5 +1,4 @@
-const arr = [1, 2, 3, 4, 5, 6];
+const a = "/api/v1/signin/1/2";
 
-const no = arr.filter((number) => number > 3);
-
-console.log(no);
+const b = a.split("/").slice(3).join("/");
+console.log(b);

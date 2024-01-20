@@ -4,12 +4,12 @@ export const SIGNIN_CONSTANTS = {
 
   validationMessage: {
     email: {
-      required: 'Email is required',
-      email: 'Please provide a valid email',
+      required: 'Email is required.',
+      email: 'Please provide a valid email.',
     },
 
     password: {
-      required: 'Password is required',
+      required: 'Password is required.',
     },
   },
 };

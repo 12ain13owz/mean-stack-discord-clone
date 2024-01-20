@@ -9,4 +9,5 @@ export interface SignUpForm {
 export interface SignUp {
   email: string;
   password: string;
+  confirmPassword: string;
 }

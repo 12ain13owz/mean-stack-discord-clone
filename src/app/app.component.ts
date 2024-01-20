@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +14,6 @@ export class AppComponent {
     JSON.parse(localStorage.getItem('darkMode') ?? 'false')
   );
   ngOnInit(): void {
-    initFlowbite();
-
     if (this.darkMode()) document.body.classList.add('dark');
     else document.body.classList.remove('dark');
   }

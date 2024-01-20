@@ -1,10 +1,5 @@
 import { Component, inject } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SIGNUP_CONSTANTS } from './sign-up.constants';
 import { ValidateService } from '../../../shared/services/validate.service';
 import { SignUp, SignUpForm } from '../../Models/sign-up.model';
@@ -28,23 +23,19 @@ export class SignUpComponent {
   inputError = this.validate.getInputClass.error;
 
   constructor() {
-    this.initSignUnForm();
+    this.initSignUpForm();
   }
 
   onSubmit() {
     if (this.form.invalid) return;
+    const signupData: SignUp = this.form.getRawValue();
 
-    const form: SignUp = {
-      email: this.email.value,
-      password: this.password.value,
-    };
-
-    this.authService.signup(form).subscribe((response) => {
+    this.authService.signup(signupData).subscribe((response) => {
       console.log(response);
     });
   }
 
-  initSignUnForm() {
+  initSignUpForm() {
     this.patternPassword = '';
 
     this.form = this.fb.group({

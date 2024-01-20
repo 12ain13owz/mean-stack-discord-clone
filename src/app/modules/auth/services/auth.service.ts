@@ -13,6 +13,6 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   signup(value: SignUp) {
-    return this.http.post(this.apiUrl + '/signup', value);
+    return this.http.post(this.apiUrl + 'signup', value);
   }
 }
